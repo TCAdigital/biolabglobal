@@ -108,7 +108,8 @@ const EsgSection = () => {
               );
             })}
             
-            <a href="#contato" className="mt-4 block">
+            {/* Garantia Científica - Desktop only */}
+            <a href="#contato" className="mt-4 hidden lg:block">
               <div className="p-8 border border-brand-gray-med bg-white/70 backdrop-blur-md rounded-[2rem] flex flex-col justify-between h-full hover:shadow-lg transition-shadow duration-500">
                 <div className="flex items-center gap-2 mb-3 text-brand-green-vibrant">
                   <Award size={18} />
@@ -166,7 +167,7 @@ const EsgSection = () => {
                         {data.milestones.map((milestone, idx) => (
                           <div key={idx} className="p-6 bg-brand-gray-light/40 border border-brand-gray-med rounded-2xl hover:border-brand-navy/20 hover:bg-white hover:-translate-y-1 hover:shadow-lg hover:shadow-brand-navy/5 transition-all duration-300">
                             <span className="text-[10px] font-mono uppercase tracking-wider text-brand-navy font-extrabold block mb-2">
-                              {idx + 1}. {milestone.label}
+                               {idx + 1}. {milestone.label}
                             </span>
                             <p className="text-xs text-brand-gray-dark/70 leading-relaxed">
                               {milestone.desc}
@@ -181,6 +182,20 @@ const EsgSection = () => {
             </AnimatePresence>
 
           </div>
+
+          {/* Garantia Científica - Mobile only */}
+          <a href="#contato" className="mt-4 block lg:hidden">
+            <div className="p-8 border border-brand-gray-med bg-white/70 backdrop-blur-md rounded-[2rem] flex flex-col justify-between h-full hover:shadow-lg transition-shadow duration-500">
+              <div className="flex items-center gap-2 mb-3 text-brand-green-vibrant">
+                <Award size={18} />
+                <span className="font-mono text-[10px] uppercase tracking-wider font-bold">Garantia Científica</span>
+              </div>
+              <p className="text-xs text-brand-gray-dark/70 leading-relaxed mb-6">
+                Acesse nossas certificações e o Relatório ESG completo indexado diretamente em nosso portal digital.
+              </p>
+              <Button variant="outline" className="w-full text-center">Baixar Relatório ESG</Button>
+            </div>
+          </a>
 
         </div>
 
