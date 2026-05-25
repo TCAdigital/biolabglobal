@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-display: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Brand Tones - Modern Navy & Vibrant Teal/Green (Sem Ouro/Roxo - Purple Ban ✅) */
+  --color-brand-navy-deep: #000B1A;
+  --color-brand-navy-dark: #001977;
+  --color-brand-navy: #001977;
+  --color-brand-teal: #05B874;
+  --color-brand-teal-bright: #05B874;
+  --color-brand-green-vibrant: #05B874;
+  --color-brand-green-dark: #006A50;
+  
+  /* Modern Soft & Immersive Tones (Apple Style) */
+  --color-brand-snow: #FCFDFD;
+  --color-brand-gray-light: #F3F5F7;
+  --color-brand-gray-med: #E5E9EC;
+  --color-brand-gray-dark: #2A313C;
+  --color-brand-charcoal: #0B0F19;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    background-color: var(--color-brand-snow);
+    color: var(--color-brand-gray-dark);
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--color-brand-navy-deep);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom Apple/Azucon Rounded Utility Styles */
+.azucon-card {
+  border: 1px solid rgba(229, 233, 236, 0.5);
+  border-radius: 2.5rem; /* 40px */
+  box-shadow: 0 10px 30px -10px rgba(0, 11, 26, 0.04), 0 1px 3px rgba(0, 11, 26, 0.02);
+}
+
+.azucon-card-dark {
+  border: 1px solid rgba(5, 184, 116, 0.1);
+  border-radius: 2.5rem; /* 40px */
+  background-color: rgba(0, 24, 51, 0.4);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.3);
+}
+
+.azucon-button-glow {
+  box-shadow: 0 0 20px rgba(5, 184, 116, 0.3);
+}
+
+.azucon-button-glow:hover {
+  box-shadow: 0 0 30px rgba(5, 184, 116, 0.5);
+}
+
+.tech-grid {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(5, 184, 116, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(5, 184, 116, 0.02) 1px, transparent 1px);
+}
+
+.tech-grid-dark {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(5, 184, 116, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(5, 184, 116, 0.04) 1px, transparent 1px);
+}
+
+/* Micro-animations and Spring transitions (500ms smooth) */
+.spring-transition {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-parallax {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-snow);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-gray-med);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-teal);
+}
+
+/* Reveal Entrance scroll effects */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
