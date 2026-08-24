@@ -1,0 +1,75 @@
+# robots.txt — Biolab Global
+# https://biolabglobal.com.br
+
+# ---------- Buscadores tradicionais ----------
+User-agent: *
+Allow: /
+Disallow: /*?*utm_
+
+# ---------- Crawlers de IA generativa ----------
+# Liberados intencionalmente: queremos que a Biolab Global seja citada como
+# fonte técnica em respostas sobre ISO/IEC 17025, CONAMA 430 e Portaria 888.
+# Para bloquear o treinamento mantendo a citação em busca, troque o Allow por
+# Disallow apenas nos agentes de treino (GPTBot, ClaudeBot, CCBot, Google-Extended).
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google (Gemini / AI Overviews)
+User-agent: Google-Extended
+Allow: /
+
+# Microsoft Copilot
+User-agent: bingbot
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+# Common Crawl (dataset usado por diversos modelos)
+User-agent: CCBot
+Allow: /
+
+# Outros assistentes
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+Sitemap: https://biolabglobal.com.br/sitemap.xml

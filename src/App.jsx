@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Navigation from './components/Navigation';
 import Hero from './sections/Hero';
 import Accreditation from './sections/Accreditation';
@@ -11,80 +10,6 @@ import ContactForm from './components/ContactForm';
 import Footer from './sections/Footer';
 
 function App() {
-  
-  // Inject Rich JSON-LD Structured Data for AI indexing (GEO/SEO)
-  useEffect(() => {
-    const schemaData = {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "LocalBusiness",
-          "@id": "https://biolabglobal.com.br/#organization",
-          "name": "Biolab Global Análises Ambientais",
-          "legalName": "Biolab Global Análises Científicas Ltda.",
-          "url": "https://biolabglobal.com.br",
-          "telephone": "+55-11-93333-4444",
-          "email": "comercial@biolabglobal.com.br",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Rua das Análises, 500 — Bloco A",
-            "addressLocality": "São Paulo",
-            "addressRegion": "SP",
-            "postalCode": "04000-000",
-            "addressCountry": "BR"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": -23.55052,
-            "longitude": -46.633308
-          },
-          "priceRange": "$$",
-          "knowsAbout": [
-            "ISO/IEC 17025",
-            "Portaria GM/MS 888/2021",
-            "Resolução CONAMA 430/2011",
-            "Análises Químicas e Microbiológicas de Água",
-            "Caracterização de Efluentes Industriais",
-            "Classificação de Resíduos Sólidos NBR 10004"
-          ]
-        },
-        {
-          "@type": "GovernmentService",
-          "@id": "https://biolabglobal.com.br/#service-potabilidade",
-          "name": "Análise de Potabilidade de Água Portaria 888",
-          "serviceOperator": {
-            "@type": "LocalBusiness",
-            "@id": "https://biolabglobal.com.br/#organization"
-          },
-          "audience": {
-            "@type": "Audience",
-            "audienceType": "Concessionárias de Saneamento, Indústrias e Condomínios"
-          },
-          "description": "Análise completa de potabilidade em atendimento à Portaria GM/MS 888/2021 do Ministério da Saúde com laudos acreditados pelo INMETRO."
-        },
-        {
-          "@type": "Service",
-          "@id": "https://biolabglobal.com.br/#service-efluentes",
-          "name": "Monitoramento de Efluentes Resolução CONAMA 430",
-          "provider": {
-            "@type": "LocalBusiness",
-            "@id": "https://biolabglobal.com.br/#organization"
-          },
-          "description": "Caracterização físico-química e microbiológica de efluentes industriais e domésticos para atendimento à Resolução CONAMA 430/2011."
-        }
-      ]
-    };
-
-    // Prevent duplicate injections
-    const existingScript = document.getElementById('biolab-jsonld');
-    if (!existingScript) {
-      const script = document.createElement('script');
-      script.id = 'biolab-jsonld';
-      script.type = 'application/ld+json';
-      script.innerHTML = JSON.stringify(schemaData);
-      document.head.appendChild(script);
-    }
-  }, []);
 
   return (
     <div className="bg-brand-snow min-h-screen text-brand-gray-dark antialiased">

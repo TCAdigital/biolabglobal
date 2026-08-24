@@ -3,22 +3,218 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Premium SEO & GEO Meta Tags -->
+    <meta name="theme-color" content="#000B1A" />
+
+    <!-- Performance: as fontes são carregadas via @import em src/index.css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- ==================== SEO PRIMÁRIO ==================== -->
     <title>Biolab Global | Análises Ambientais Acreditadas ISO/IEC 17025</title>
     <meta name="description" content="Laboratório de análises ambientais acreditado pelo INMETRO conforme a norma ISO/IEC 17025. Caracterização de efluentes (CONAMA 430), potabilidade da água (Portaria 888), resíduos sólidos (NBR 10004) e solos. Laudos com validade legal e cadeia de custódia rastreável." />
     <meta name="keywords" content="análise ambiental, ISO 17025, INMETRO, potabilidade da água, Portaria 888, monitoramento de efluentes, CONAMA 430, resíduos sólidos, NBR 10004, análise de solos, laboratório acreditado" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="author" content="Biolab Global" />
-    
-    <!-- Open Graph / Meta redes sociais -->
+    <meta name="geo.region" content="BR-SP" />
+    <meta name="geo.placename" content="São Paulo" />
+    <link rel="canonical" href="https://biolabglobal.com.br/" />
+
+    <!-- ==================== OPEN GRAPH (WhatsApp, LinkedIn, Facebook, Slack) ==================== -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Biolab Global" />
+    <meta property="og:locale" content="pt_BR" />
     <meta property="og:title" content="Biolab Global | Análises Ambientais Acreditadas ISO/IEC 17025" />
     <meta property="og:description" content="Laboratório de análises ambientais de alta precisão chancelado pelo INMETRO. Laudos rastreáveis com total segurança técnica e validade jurídica." />
-    <meta property="og:url" content="https://biolabglobal.com.br" />
-    
-    <!-- Icone científico fallback -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧪</text></svg>" />
+    <meta property="og:url" content="https://biolabglobal.com.br/" />
+    <meta property="og:image" content="https://biolabglobal.com.br/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://biolabglobal.com.br/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Biolab Global — análises de precisão para um futuro sustentável. Acreditação INMETRO ISO/IEC 17025." />
+
+    <!-- ==================== TWITTER / X ==================== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Biolab Global | Análises Ambientais Acreditadas ISO/IEC 17025" />
+    <meta name="twitter:description" content="Laboratório de análises ambientais de alta precisão chancelado pelo INMETRO. Laudos rastreáveis com total segurança técnica e validade jurídica." />
+    <meta name="twitter:image" content="https://biolabglobal.com.br/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Biolab Global — análises de precisão para um futuro sustentável." />
+
+    <!-- ==================== ÍCONES ==================== -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- ==================== DADOS ESTRUTURADOS (SEO + GEO para IAs) ====================
+         Mantido estático no HTML de propósito: crawlers de IA (GPTBot, ClaudeBot,
+         PerplexityBot) e os crawlers de preview de link não executam JavaScript,
+         portanto não enxergariam um schema injetado em runtime pelo React.
+    -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://biolabglobal.com.br/#website",
+          "url": "https://biolabglobal.com.br/",
+          "name": "Biolab Global",
+          "inLanguage": "pt-BR",
+          "publisher": { "@id": "https://biolabglobal.com.br/#organization" }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://biolabglobal.com.br/#webpage",
+          "url": "https://biolabglobal.com.br/",
+          "name": "Biolab Global | Análises Ambientais Acreditadas ISO/IEC 17025",
+          "description": "Laboratório de análises ambientais acreditado pelo INMETRO conforme a norma ISO/IEC 17025. Efluentes, potabilidade da água, resíduos sólidos e solos.",
+          "isPartOf": { "@id": "https://biolabglobal.com.br/#website" },
+          "about": { "@id": "https://biolabglobal.com.br/#organization" },
+          "inLanguage": "pt-BR",
+          "primaryImageOfPage": "https://biolabglobal.com.br/og-image.jpg"
+        },
+        {
+          "@type": ["LocalBusiness", "Organization"],
+          "@id": "https://biolabglobal.com.br/#organization",
+          "name": "Biolab Global Análises Ambientais",
+          "legalName": "Biolab Global Análises Científicas Ltda.",
+          "alternateName": "Biolab Global",
+          "url": "https://biolabglobal.com.br/",
+          "logo": "https://biolabglobal.com.br/logo-biolab-global.webp",
+          "image": "https://biolabglobal.com.br/og-image.jpg",
+          "description": "Laboratório de análises ambientais acreditado pelo INMETRO na norma ISO/IEC 17025, atuando desde 2009 com indústrias, saneamento básico e agronegócio em todo o território nacional.",
+          "foundingDate": "2009",
+          "telephone": "+55-11-93333-4444",
+          "email": "comercial@biolabglobal.com.br",
+          "taxID": "12.345.678/0001-90",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rua das Análises, 500 — Bloco A",
+            "addressLocality": "São Paulo",
+            "addressRegion": "SP",
+            "postalCode": "04000-000",
+            "addressCountry": "BR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -23.55052,
+            "longitude": -46.633308
+          },
+          "areaServed": { "@type": "Country", "name": "Brasil" },
+          "priceRange": "$$",
+          "hasCredential": {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "Acreditação laboratorial",
+            "name": "Acreditação INMETRO ISO/IEC 17025 — CRL-0842",
+            "recognizedBy": {
+              "@type": "Organization",
+              "name": "INMETRO — Instituto Nacional de Metrologia, Qualidade e Tecnologia"
+            }
+          },
+          "knowsAbout": [
+            "ISO/IEC 17025",
+            "Portaria GM/MS 888/2021",
+            "Resolução CONAMA 430/2011",
+            "Resolução CONAMA 357/2005",
+            "NBR 10004 — Classificação de Resíduos Sólidos",
+            "Análises Químicas e Microbiológicas de Água",
+            "Caracterização de Efluentes Industriais",
+            "Espectrometria ICP-OES",
+            "Cadeia de custódia e Standard Methods (APHA)"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Escopo de análises acreditadas",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@id": "https://biolabglobal.com.br/#service-potabilidade" } },
+              { "@type": "Offer", "itemOffered": { "@id": "https://biolabglobal.com.br/#service-efluentes" } },
+              { "@type": "Offer", "itemOffered": { "@id": "https://biolabglobal.com.br/#service-residuos" } }
+            ]
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://biolabglobal.com.br/#service-potabilidade",
+          "name": "Análise de Potabilidade de Água — Portaria GM/MS 888/2021",
+          "serviceType": "Análise laboratorial de potabilidade de água",
+          "provider": { "@id": "https://biolabglobal.com.br/#organization" },
+          "areaServed": { "@type": "Country", "name": "Brasil" },
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Concessionárias de Saneamento, Indústrias e Condomínios"
+          },
+          "description": "Análise completa de potabilidade em atendimento à Portaria GM/MS 888/2021 do Ministério da Saúde, com laudos acreditados pelo INMETRO e relatórios técnicos prontos para integração no Sisagua."
+        },
+        {
+          "@type": "Service",
+          "@id": "https://biolabglobal.com.br/#service-efluentes",
+          "name": "Monitoramento de Efluentes — Resolução CONAMA 430/2011",
+          "serviceType": "Caracterização físico-química e microbiológica de efluentes",
+          "provider": { "@id": "https://biolabglobal.com.br/#organization" },
+          "areaServed": { "@type": "Country", "name": "Brasil" },
+          "description": "Caracterização físico-química e microbiológica de efluentes industriais e domésticos para atendimento às Resoluções CONAMA 430/2011 e CONAMA 357/2005."
+        },
+        {
+          "@type": "Service",
+          "@id": "https://biolabglobal.com.br/#service-residuos",
+          "name": "Classificação de Resíduos Sólidos — NBR 10004",
+          "serviceType": "Ensaio de classificação de resíduos sólidos",
+          "provider": { "@id": "https://biolabglobal.com.br/#organization" },
+          "areaServed": { "@type": "Country", "name": "Brasil" },
+          "description": "Ensaios de lixiviação e solubilização para classificação de resíduos sólidos conforme a NBR 10004, incluindo determinação multielementar de metais pesados por ICP-OES."
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://biolabglobal.com.br/#faq",
+          "isPartOf": { "@id": "https://biolabglobal.com.br/#webpage" },
+          "inLanguage": "pt-BR",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Qual é a importância da acreditação ISO/IEC 17025 do INMETRO?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A ISO/IEC 17025 é o padrão internacional máximo que atesta a competência técnica, imparcialidade e operação consistente de laboratórios de calibração e ensaio. Ao contrário de uma certificação de gestão genérica (como a ISO 9001), a acreditação ISO 17025 comprova cientificamente que o laboratório executa os ensaios com precisão e confiabilidade. Laudos emitidos por laboratórios acreditados pela ISO 17025 possuem validade legal indiscutível perante órgãos reguladores (como ANVISA, IBAMA, CETESB e secretarias estaduais), tribunais e licitações públicas."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Quais são as principais exigências da Portaria GM/MS 888/2021 para potabilidade da água?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A Portaria GM/MS 888/2021 do Ministério da Saúde estabelece os procedimentos de controle e de vigilância da qualidade da água para consumo humano e seu padrão de potabilidade. Ela exige monitoramentos rigorosos com frequências diárias, semanais e mensais para parâmetros microbiológicos (coliformes totais, Escherichia coli), físico-químicos (turbidez, cor, pH, cloro residual livre) e inorgânicos/orgânicos (metais pesados, pesticidas, desinfetantes). A Biolab Global realiza a caracterização completa exigida por esta norma, emitindo relatórios técnicos prontos para integração no Sisagua."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Como o monitoramento de efluentes industriais deve atender às Resoluções CONAMA?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "O descarte de efluentes industriais e domésticos em corpos hídricos deve obedecer rigidamente aos parâmetros estabelecidos nas Resoluções CONAMA 357/2005 e CONAMA 430/2011. Estas normas estabelecem limites estritos de concentração para Demanda Bioquímica de Oxigênio (DBO), Demanda Química de Oxigênio (DQO), Óleos e Graxas, Sólidos Sedimentáveis, Metais Pesados (como chumbo, cromo, cádmio) e temperatura. O descumprimento destas normas sujeita a empresa a severas sanções civis, criminais e administrativas sob a Lei de Crimes Ambientais."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Como funciona a cadeia de custódia e rastreabilidade na coleta técnica de campo?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Toda amostragem ambiental realizada pela Biolab Global segue um rígido protocolo científico de cadeia de custódia de acordo com o Standard Methods (APHA). Desde o momento da coleta por nossos técnicos equipados com coletores calibrados, cada amostra recebe um código identificador único, é preservada quimicamente conforme a matriz analítica e selada com lacre inviolável numerado. O transporte ocorre em caixas térmicas com temperatura monitorada por termômetros digitais rastreáveis, garantindo que o laboratório analise a amostra com sua integridade química e microbiológica 100% preservada."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Quais tecnologias são utilizadas para análise multielementar de metais pesados?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Utilizamos a tecnologia de Espectrometria de Emissão Óptica com Plasma Acoplado Indutivamente (ICP-OES), que representa o padrão-ouro internacional em análises inorgânicas de alta performance. O ICP-OES ioniza a amostra a temperaturas de até 10.000 Kelvin, permitindo a detecção simultânea de dezenas de metais e metaloides (como arsênio, mercúrio, chumbo, cromo, cobre, zinco e ferro) em níveis de partes por bilhão (ppb). Isso garante máxima precisão analítica e limites de detecção extremamente baixos."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
