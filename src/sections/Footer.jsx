@@ -1,4 +1,8 @@
-import { ShieldCheck, Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
+import {
+  ShieldCheck, Mail, Phone, MapPin, ArrowUpRight,
+  Microscope, LayoutGrid, Leaf, CircleQuestionMark,
+  FileText, Lock, Scale
+} from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -18,9 +22,9 @@ const Footer = () => {
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3">
               <img 
-                src="/logo-biolab-global.webp" 
+                src="/logo-biolab-global-white.webp" 
                 alt="Biolab Global" 
-                className="h-10 w-auto object-contain brightness-0 invert" 
+                className="h-12 w-auto object-contain" 
               />
             </div>
             <p className="text-sm text-brand-snow/75 leading-relaxed">
@@ -77,22 +81,26 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3 text-sm">
               {[
-                { href: "#solucoes", label: "Escopo de Análises" },
-                { href: "#acreditacao", label: "INMETRO ISO 17025" },
-                { href: "#setores", label: "Segmentos Atendidos" },
-                { href: "#esg", label: "Relatório ESG 2026" },
-                { href: "#faq", label: "Central de Suporte FAQ" }
-              ].map((link, idx) => (
-                <li key={idx}>
+                { href: "#solucoes", label: "Escopo de Análises", icon: Microscope },
+                { href: "#acreditacao", label: "INMETRO ISO 17025", icon: ShieldCheck },
+                { href: "#setores", label: "Segmentos Atendidos", icon: LayoutGrid },
+                { href: "#esg", label: "Relatório ESG 2026", icon: Leaf },
+                { href: "#faq", label: "Central de Suporte FAQ", icon: CircleQuestionMark }
+              ].map((link) => {
+                const Icon = link.icon;
+                return (
+                <li key={link.label}>
                   <a 
                     href={link.href} 
-                    className="hover:text-brand-green-vibrant transition-colors duration-300 flex items-center gap-1.5 group"
+                    className="hover:text-brand-green-vibrant transition-colors duration-300 flex items-center gap-2 group"
                   >
+                    <Icon size={15} strokeWidth={2.25} className="shrink-0 text-brand-green-vibrant" aria-hidden="true" />
                     <span>{link.label}</span>
                     <ArrowUpRight size={12} className="opacity-0 -translate-y-0.5 translate-x-0.5 group-hover:opacity-100 transition-all duration-300" />
                   </a>
                 </li>
-              ))}
+                );
+              })}
             </ul>
           </div>
 
@@ -125,11 +133,20 @@ const Footer = () => {
             © {currentYear} BIOLAB GLOBAL ANALISES CIENTIFICAS LTDA. <br className="md:hidden" /> CNPJ 12.345.678/0001-90
           </div>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-            <a href="#" className="hover:text-brand-green-vibrant transition-colors duration-300">Termos de Uso</a>
+            <a href="#" className="inline-flex items-center gap-1.5 hover:text-brand-green-vibrant transition-colors duration-300">
+              <FileText size={12} strokeWidth={2.25} className="shrink-0" aria-hidden="true" />
+              Termos de Uso
+            </a>
             <span>•</span>
-            <a href="#" className="hover:text-brand-green-vibrant transition-colors duration-300">Política de Privacidade</a>
+            <a href="#" className="inline-flex items-center gap-1.5 hover:text-brand-green-vibrant transition-colors duration-300">
+              <Lock size={12} strokeWidth={2.25} className="shrink-0" aria-hidden="true" />
+              Política de Privacidade
+            </a>
             <span>•</span>
-            <a href="#" className="hover:text-brand-green-vibrant transition-colors duration-300">Código de Ética</a>
+            <a href="#" className="inline-flex items-center gap-1.5 hover:text-brand-green-vibrant transition-colors duration-300">
+              <Scale size={12} strokeWidth={2.25} className="shrink-0" aria-hidden="true" />
+              Código de Ética
+            </a>
           </div>
         </div>
 

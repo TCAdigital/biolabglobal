@@ -1,7 +1,17 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ShieldCheck, Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
+import {
+  ShieldCheck, Menu, X, ArrowRight, ChevronDown,
+  House, Users, FlaskConical, Microscope, Compass, LayoutGrid,
+  Award, Leaf, BookOpen, Mail, History, Target, Building2,
+  Handshake, Droplet, Waves, Mountain, Trash2, Activity,
+  Droplets, FileText, Factory, HardHat, Tractor, Landmark, Scale
+} from 'lucide-react';
 import Button from './Button';
+
+const MenuGlyph = ({ icon: Icon, className = 'text-brand-green-vibrant', size = 13 }) => (
+  <Icon size={size} strokeWidth={2.25} className={`shrink-0 ${className}`} aria-hidden="true" />
+);
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,76 +28,82 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { label: 'Home', href: '/' },
+    { label: 'Home', href: '/', icon: House },
     {
       label: 'Quem Somos',
       href: '#acreditacao',
+      icon: Users,
       children: [
-        { label: 'Nossa História', href: '#acreditacao' },
-        { label: 'Missão, Visão e Valores', href: '#acreditacao' },
-        { label: 'Nossa Equipe', href: '#acreditacao' },
-        { label: 'Infraestrutura', href: '#acreditacao' }
+        { label: 'Nossa História', href: '#acreditacao', icon: History },
+        { label: 'Missão, Visão e Valores', href: '#acreditacao', icon: Target },
+        { label: 'Nossa Equipe', href: '#acreditacao', icon: Users },
+        { label: 'Infraestrutura', href: '#acreditacao', icon: Building2 }
       ]
     },
     {
       label: 'Soluções',
       href: '#solucoes',
+      icon: FlaskConical,
       children: [
-        { label: 'Visão Geral', href: '#solucoes' },
-        { label: 'Análises Laboratoriais', href: '#solucoes' },
-        { label: 'Coleta e Monitoramento', href: '#solucoes' },
-        { label: 'Consultoria Ambiental', href: '#solucoes' },
-        { label: 'Compliance Ambiental', href: '#simulador' }
+        { label: 'Visão Geral', href: '#solucoes', icon: LayoutGrid },
+        { label: 'Análises Laboratoriais', href: '#solucoes', icon: FlaskConical },
+        { label: 'Coleta e Monitoramento', href: '#solucoes', icon: Compass },
+        { label: 'Consultoria Ambiental', href: '#solucoes', icon: Handshake },
+        { label: 'Compliance Ambiental', href: '#simulador', icon: ShieldCheck }
       ]
     },
     {
       label: 'Análises',
       href: '#solucoes',
+      icon: Microscope,
       children: [
-        { label: 'Análises Microbiológicas', href: '#solucoes' },
-        { label: 'Análises Físico-Químicas', href: '#solucoes' },
-        { label: 'Potabilidade da Água', href: '#solucoes' },
-        { label: 'Análise de Efluentes', href: '#solucoes' },
-        { label: 'Análise de Solo', href: '#solucoes' },
-        { label: 'Análise de Resíduos', href: '#solucoes' },
-        { label: 'Monitoramento Ambiental', href: '#solucoes' }
+        { label: 'Análises Microbiológicas', href: '#solucoes', icon: Microscope },
+        { label: 'Análises Físico-Químicas', href: '#solucoes', icon: FlaskConical },
+        { label: 'Potabilidade da Água', href: '#solucoes', icon: Droplet },
+        { label: 'Análise de Efluentes', href: '#solucoes', icon: Waves },
+        { label: 'Análise de Solo', href: '#solucoes', icon: Mountain },
+        { label: 'Análise de Resíduos', href: '#solucoes', icon: Trash2 },
+        { label: 'Monitoramento Ambiental', href: '#solucoes', icon: Activity }
       ]
     },
     {
       label: 'Coleta',
       href: '#solucoes',
+      icon: Compass,
       children: [
-        { label: 'Coleta de Água', href: '#solucoes' },
-        { label: 'Coleta de Solo', href: '#solucoes' },
-        { label: 'Monitoramento de Efluentes', href: '#solucoes' },
-        { label: 'Monitoramento Contínuo', href: '#solucoes' },
-        { label: 'Laudos Técnicos', href: '#solucoes' }
+        { label: 'Coleta de Água', href: '#solucoes', icon: Droplets },
+        { label: 'Coleta de Solo', href: '#solucoes', icon: Mountain },
+        { label: 'Monitoramento de Efluentes', href: '#solucoes', icon: Waves },
+        { label: 'Monitoramento Contínuo', href: '#solucoes', icon: Activity },
+        { label: 'Laudos Técnicos', href: '#solucoes', icon: FileText }
       ]
     },
     {
       label: 'Segmentos',
       href: '#setores',
+      icon: LayoutGrid,
       children: [
-        { label: 'Saneamento Básico', href: '#setores' },
-        { label: 'Indústrias', href: '#setores' },
-        { label: 'Construtoras', href: '#setores' },
-        { label: 'Agronegócio', href: '#setores' },
-        { label: 'Empresas Ambientais', href: '#setores' },
-        { label: 'Órgãos Públicos', href: '#setores' }
+        { label: 'Saneamento Básico', href: '#setores', icon: Waves },
+        { label: 'Indústrias', href: '#setores', icon: Factory },
+        { label: 'Construtoras', href: '#setores', icon: HardHat },
+        { label: 'Agronegócio', href: '#setores', icon: Tractor },
+        { label: 'Empresas Ambientais', href: '#setores', icon: Leaf },
+        { label: 'Órgãos Públicos', href: '#setores', icon: Landmark }
       ]
     },
-    { label: 'Certificações', href: '#acreditacao' },
-    { label: 'ESG', href: '#esg' },
+    { label: 'Certificações', href: '#acreditacao', icon: Award },
+    { label: 'ESG', href: '#esg', icon: Leaf },
     {
       label: 'Blog Técnico',
       href: '#faq',
+      icon: BookOpen,
       children: [
-        { label: 'Artigos Técnicos', href: '#faq' },
-        { label: 'Normas e Regulações', href: '#faq' },
-        { label: 'Cases e Estudos', href: '#faq' }
+        { label: 'Artigos Técnicos', href: '#faq', icon: FileText },
+        { label: 'Normas e Regulações', href: '#faq', icon: Scale },
+        { label: 'Cases e Estudos', href: '#faq', icon: BookOpen }
       ]
     },
-    { label: 'Contato', href: '#contato' }
+    { label: 'Contato', href: '#contato', icon: Mail }
   ];
 
   const handleLinkClick = (e, href) => {
@@ -166,7 +182,7 @@ const Navigation = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center justify-center gap-1 xl:gap-3 flex-wrap flex-grow mx-6">
+          <nav className="hidden lg:flex items-center justify-center gap-x-1 gap-y-1 xl:gap-x-2 flex-wrap flex-grow mx-4">
             {navItems.map((item, index) => (
               <div
                 key={item.label}
@@ -177,8 +193,9 @@ const Navigation = () => {
                 <a
                   href={item.href}
                   onClick={(e) => handleLinkClick(e, item.href)}
-                  className="font-display text-[11px] xl:text-[12.5px] font-bold uppercase tracking-wider text-brand-navy-dark hover:text-brand-green-vibrant transition-all duration-300 flex items-center gap-0.5 xl:gap-1 px-1 py-1"
+                  className="font-display text-[10.5px] xl:text-[12px] font-bold uppercase tracking-wide text-brand-navy-dark hover:text-brand-green-vibrant transition-all duration-300 flex items-center gap-1 px-0.5 py-1 whitespace-nowrap"
                 >
+                  <MenuGlyph icon={item.icon} size={13} />
                   <span>{item.label}</span>
                   {item.children && (
                     <ChevronDown size={10} className={`transition-transform duration-300 ${activeDropdown === index ? 'rotate-180 text-brand-green-vibrant' : 'text-brand-navy-dark/40'}`} />
@@ -193,7 +210,7 @@ const Navigation = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
                         transition={{ type: 'spring', stiffness: 150, damping: 18 }}
-                        className={`absolute left-1/2 -translate-x-1/2 top-full w-56 z-50 pointer-events-auto ${
+                        className={`absolute left-1/2 -translate-x-1/2 top-full w-64 z-50 pointer-events-auto ${
                           isScrolled ? 'pt-[16px]' : 'pt-[20px]'
                         }`}
                       >
@@ -203,9 +220,10 @@ const Navigation = () => {
                               key={child.label}
                               href={child.href}
                               onClick={(e) => handleLinkClick(e, child.href)}
-                              className="block px-4 py-2 font-display text-[12px] font-semibold tracking-wide text-brand-navy-dark hover:text-brand-green-vibrant hover:bg-brand-green-vibrant/5 transition-all duration-200 border-l-2 border-transparent hover:border-brand-green-vibrant"
+                              className="flex items-center gap-2 px-4 py-2 font-display text-[12px] font-semibold tracking-wide text-brand-navy-dark hover:text-brand-green-vibrant hover:bg-brand-green-vibrant/5 transition-all duration-200 border-l-2 border-transparent hover:border-brand-green-vibrant"
                             >
-                              {child.label}
+                              <MenuGlyph icon={child.icon} size={14} />
+                              <span>{child.label}</span>
                             </a>
                           ))}
                         </div>
@@ -256,7 +274,10 @@ const Navigation = () => {
                           onClick={() => toggleMobileItem(index)}
                           className="w-full flex items-center justify-between font-display text-[13px] font-bold uppercase tracking-wider text-brand-navy-dark py-2 text-left cursor-pointer"
                         >
-                          <span>{item.label}</span>
+                          <span className="inline-flex items-center gap-2">
+                            <MenuGlyph icon={item.icon} size={15} />
+                            {item.label}
+                          </span>
                           <ChevronDown size={14} className={`transition-transform duration-300 ${expandedMobileItem === index ? 'rotate-180 text-brand-green-vibrant' : 'text-brand-navy-dark/40'}`} />
                         </button>
                         <AnimatePresence initial={false}>
@@ -273,9 +294,10 @@ const Navigation = () => {
                                   key={child.label}
                                   href={child.href}
                                   onClick={(e) => handleLinkClick(e, child.href)}
-                                  className="font-display text-[12px] font-medium tracking-wide text-brand-navy hover:text-brand-green-vibrant py-1 transition-colors duration-200"
+                                  className="flex items-center gap-2 font-display text-[12px] font-medium tracking-wide text-brand-navy hover:text-brand-green-vibrant py-1 transition-colors duration-200"
                                 >
-                                  {child.label}
+                                  <MenuGlyph icon={child.icon} size={14} />
+                                  <span>{child.label}</span>
                                 </a>
                               ))}
                             </motion.div>
@@ -286,9 +308,10 @@ const Navigation = () => {
                       <a
                         href={item.href}
                         onClick={(e) => handleLinkClick(e, item.href)}
-                        className="block font-display text-[13px] font-bold uppercase tracking-wider text-brand-navy-dark py-2 hover:text-brand-green-vibrant transition-colors duration-200"
+                        className="flex items-center gap-2 font-display text-[13px] font-bold uppercase tracking-wider text-brand-navy-dark py-2 hover:text-brand-green-vibrant transition-colors duration-200"
                       >
-                        {item.label}
+                        <MenuGlyph icon={item.icon} size={15} />
+                        <span>{item.label}</span>
                       </a>
                     )}
                   </div>
